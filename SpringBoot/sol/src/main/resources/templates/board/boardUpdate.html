@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   
+</head>
+
+<body> 
+    <div style="padding:5px 300px;">
+    <h1>게시글 수정🖋</h1>
+   
+    <form action="/board/boardUpdate" method="post" autocomplete="off">
+        <input type="hidden" name="boardNo" th:value="${board.boardNo}"/> <!--html상에서만 나타나는 정보-->
+        <p>
+        작성자 : <input type="text" name="boardWriter" th:value="${board.boardWriter}"></h3>
+        <h3>제목</h3>
+        <textarea th:text="${board.boardTitle}" name="boardTitle" style="width:100% ; resize: none;"></textarea>
+        <h3>내용</h3>
+        <textarea th:text="${board.boardContent}" name="boardContent" style="width:100% ; height:200px; resize: none;"></textarea>
+        <br/>
+    </p>
+        <input type="reset" value="원래대로"/>
+
+        <input type="submit" value="수정 완료" style="float: right"/><br><br>
+
+        <center><input type="button" value="목록으로" onclick="location.href='/board/boardList'"></center>
+    </form>
+    </div>
+</body>
+
+</html>

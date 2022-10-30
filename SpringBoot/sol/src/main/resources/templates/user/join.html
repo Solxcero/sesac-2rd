@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+</head>
+
+<body>
+    <div style="padding:100px 100px;">
+
+        <center>
+            <h1>📑회원가입</h1>
+            
+
+            <form action="/user/join" method="post" autocomplete="off">
+                <fieldset style="width:150">
+                    <legend style="text-align: center;">정보입력</legend>
+                    <input type="text" placeholder="아이디" name="userId" /><br><br>
+                    <input type="text" placeholder="비밀번호" name="userPw" /><br><br>
+                    <input type="text" placeholder="이름" name="userName" /><br><br>
+                    <input type="text" placeholder="연락처" name="userPh" /><br><br>
+                    사용언어 :
+                    <select name = "userLang" size="1">
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                        <option value="C">C</option>
+                        <option value="JavaScript">JavaScript</option>
+                    </select><br><br>
+                    <input type="submit" value="회원가입" />
+                </fieldset>
+            </form>
+            <a href="/">🏠</a>
+        </center>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sol.mapper.NoticeMapper">
+    <select id="noticeList" resultType="com.example.sol.model.Notice">
+        select*from notice
+    </select>
+
+    <insert id="noticeCreate" parameterType="com.example.sol.model.Notice" > 
+        insert into notice values(NULL,#{notTitle},#{notContent})
+    </insert>
+    
+    <delete id="noticeRemove" parameterType="int">
+        delete from notice where notNo=#{notNo};       
+    </delete>
+</mapper>

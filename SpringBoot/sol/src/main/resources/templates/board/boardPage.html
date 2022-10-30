@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <style>
+        table {
+            border: 1px solid #444444;
+            width: 700px;
+            height: 80px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="padding:70px 350px;">
+
+        <center>
+            <h2>[[${board.boardWriter}]]님의 게시글</h2>
+
+            <br><br>
+            <table>
+                <tr>
+                    <td style="background-color:  rgb(197, 252, 115); width: 70; text-align: center;">번호</td>
+                    <td style="background-color:  rgb(197, 252, 115); text-align: center; ">제목</td>
+                    <td style="background-color:   rgb(197, 252, 115);width:130 ;text-align: center;">작성자</td>
+                </tr>
+
+                <tr th:each="board : ${boardData}">
+                    <td th:text="${board.boardNo}" style=" text-align: center;"></td>
+                    <td style="padding-left: 20px;">
+                        <a th:href="@{/board/boardDetail(boardNo=${board.boardNo})}">[[${board.boardTitle}]]</a>
+                    </td>
+                    <td th:text="${board.boardWriter}" style=" text-align: center;"></td>
+                </tr>
+                <th:block th:if="${boardData.size()} == 0">
+                    <tr>
+                        <td colspan="3" style="text-align:center ;">게시글이 존재 하지 않습니다❌</td>
+                    </tr>
+                </th:block>
+
+
+            </table> <br><br>
+
+
+    </div>
+
+    </center>
+    <center>
+        <a href="/board/boardList" style="text-decoration: none;">뒤로</a><br><br>
+
+        <a href="/">🏠</a>
+    </center>
+    </div>
+
+
+</body>
+
+</html>

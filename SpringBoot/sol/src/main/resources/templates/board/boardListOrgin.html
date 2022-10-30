@@ -1,0 +1,121 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <style>
+        table {
+            border: 1px solid #444444;
+            width: 700px;
+            height: 80px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <div style="padding:70px 350px;">
+            <th:block th:if="${user.userId} == admin">
+                <table style="height:40px ;">
+                    <tr>
+                        <td style="background-color:rgb(248, 93, 93);text-align: center;"><b>공지📢</b></td>
+
+                    </tr>
+                </table>
+                <table style="height:40px ;">
+                    <th:block th:if="${noticeList} != null">
+                        <tr th:each="notice : ${noticeList}">
+                            <td th:text="${notice.notNo}" style=" text-align: center; width: 70px;"></td>
+                            <td style="padding-left: 20px;">
+                                <a th:href="@{/board/noticeDetail(notNo=${notice.notNo})}">[[${notice.notTitle}]]</a>
+                            </td>
+
+                    </th:block>
+                </table><br>
+                <input type="button" value="글쓰기✍" onclick="location.href='/board/noticeCreate'"
+                    style="float: right;background-color:  rgb(248, 93, 93); cursor: pointer; border: 0;font-size:1em; border-radius:0.5em; padding:5px 20px; "><br>
+                <br>
+                <hr>
+                <h3 style="color:rgb(21, 117, 21) ;">Study Board📝</h3>
+                <p style="float: right; font-size: small;">전체 글([[${boardList.size()}]]개)</p>
+                <br><br>
+                <table>
+                    <tr>
+                        <td style="background-color:  rgb(197, 252, 115); width: 70; text-align: center;">번호</td>
+                        <td style="background-color:  rgb(197, 252, 115); text-align: center; ">제목</td>
+                        <td style="background-color:   rgb(197, 252, 115);width:130 ;text-align: center;">작성자</td>
+                    </tr>
+                    <th:block th:if="${boardList} != null">
+                        <tr th:each="board : ${boardList}">
+                            <td th:text="${board.boardNo}" style=" text-align: center;"></td>
+                            <td style="padding-left: 20px;">
+                                <a th:href="@{/board/boardDetail(boardNo=${board.boardNo})}">[[${board.boardTitle}]]</a>
+                            </td>
+                            <td th:text="${board.boardWriter}" style=" text-align: center;"></td>
+                        </tr>
+                    </th:block>
+                    <th:block th:if="${boardList.size()} == 0">
+                        <tr>
+                            <td colspan="3" style="text-align: center;">게시글이 존재 하지 않습니다❌</td>
+                        </tr>
+                    </th:block>
+                </table> <br><br>
+            </th:block>
+
+            <th:block th:unless="${user.userId} == admin">
+                <table style="height:40px ;">
+                    <tr>
+                        <td style="background-color:rgb(248, 93, 93); width: 70;text-align: center;"><b>공지📢</b></td>
+                    </tr>
+                </table>
+                <table style="height:40px ;">
+                    <th:block th:if="${noticeList} != null">
+                        <tr th:each="notice : ${noticeList}">
+                            <td th:text="${notice.notNo}" style=" text-align: center;"></td>
+                            <td style="padding-left: 20px;">
+                                <a th:href="@{/board/noticeDetail(notNo=${notice.notNo})}">[[${notice.notTitle}]]</a>
+
+                    </th:block>
+                </table>
+                <hr>
+                <h3 style="color :rgb(21, 117, 21);">Study Board📝</h3>
+                <p style="float: right; font-size: small;">전체 글([[${boardList.size()}]]개)</p>
+                <a th:href="@{/board/boardPage(boardWriter=${person})}" th:text="'내 글('+ ${userboard.size()}+'개)' "
+                    style="float:left; font-size:small; margin-top: 13px;"></a>
+                <br><br>
+                <table>
+                    <tr>
+                        <td style="background-color:  rgb(197, 252, 115); width: 70; text-align: center;">번호</td>
+                        <td style="background-color:  rgb(197, 252, 115); text-align: center; ">제목</td>
+                        <td style="background-color:   rgb(197, 252, 115);width:130 ;text-align: center;">작성자</td>
+                    </tr>
+                    <th:block th:if="${boardList} != null">
+                        <tr th:each="board : ${boardList}">
+                            <td th:text="${board.boardNo}" style=" text-align: center;"></td>
+                            <td style="padding-left: 20px;">
+                                <a th:href="@{/board/boardDetail(boardNo=${board.boardNo})}">[[${board.boardTitle}]]</a>
+                            </td>
+                            <td th:text="${board.boardWriter}" style=" text-align: center;"></td>
+                        </tr>
+                    </th:block>
+                    <th:block th:if="${boardList.size()} == 0">
+                        <tr>
+                            <td colspan="3" style="text-align: center;">게시글이 존재 하지 않습니다❌</td>
+                        </tr>
+                </table> <br><br>
+
+                <input type="button" value="글쓰기✍" onclick="location.href='/board/boardCreate'"
+                    style="float: right;background-color:  rgb(197, 252, 115); cursor: pointer; border: 0;font-size:1em; border-radius:0.5em; padding:5px 20px; ">
+            </th:block>
+        </div>
+        <hr>
+    </center>
+    <center>
+
+        <a href="/">🏠</a>
+    </center>
+    </div>
+
+
+</body>
+
+</html>

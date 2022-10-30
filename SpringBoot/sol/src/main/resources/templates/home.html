@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <style>
+        /* @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css); */
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="padding:100px 100px;">
+        <center>
+            <img src="https://user-images.githubusercontent.com/99321739/198421930-d9807a80-5f5c-4ec0-a7d4-a010852f109a.png"
+                width="280" height="140"><br>
+            <h1>새싹 스터디 클럽🌱</h1>
+
+            <th:block th:if="${session.user} == null">
+                <a href="/user/join" style="color: rgb(30, 114, 30); font-weight: bold; ">회원가입</a> |
+                <a href="/user/login" style="color: rgb(30, 114, 30); font-weight: bold;">로그인</a>
+            </th:block>
+            <th:block th:unless="${session.user} == null">
+                <span>
+                    <h3>[[${session.user.userName}]]님 환영합니다🖐</h3>
+                </span> <br>
+
+                <th:block th:if="${session.user.userId} == admin">
+                    <a href="/user/logout">로그아웃</a> |
+                    <a href="/board/boardList">게시판📋</a><br><br>
+                </th:block>
+
+                <th:block th:unless="${session.user.userId} == admin">
+                    <a th:href="@{/user/info(userId=${session.user.userId})}">내 페이지</a> |
+                    <a href="/board/boardList">게시판📋</a><br><br>
+                    <a href="/user/logout">로그아웃</a> |
+                    <a href="/user/withdraw">탈퇴하기</a>
+                </th:block>
+            </th:block>
+
+        </center>
+    </div>
+
+
+</body>
+
+</html>

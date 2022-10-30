@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sol.mapper.BoardMapper">
+    <select id="boardList" resultType="com.example.sol.model.Board">
+        select*from board
+    </select>
+
+    <select id="selectBoard" parameterType="String" resultType="com.example.sol.model.Board">
+        select*
+        from board
+        where boardWriter=#{boardWriter}
+    </select>
+
+    <insert id="boardCreate" parameterType="com.example.sol.model.Board" > 
+        insert into board values(NULL,#{boardTitle},#{boardContent},#{boardWriter})
+    </insert>
+
+    <update id="boardUpdate" parameterType="com.example.sol.model.Board">
+        update board
+        set boardTitle=#{boardTitle}, boardContent=#{boardContent}
+        where boardNo=#{boardNo}
+    </update>
+
+    <delete id="boardRemove" parameterType="int">
+        delete from board where boardNo=#{boardNo};       
+    </delete>
+</mapper>

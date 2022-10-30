@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+</head>
+
+<body>
+    <div style="padding:100px 100px;">
+
+        <center>
+            <h1>정보 확인</h1>
+
+            <form action="/user/withdraw" method="post" autocomplete="off">
+                <fieldset style="width:150">
+                    <legend style="text-align: center;">😥</legend>
+
+                    <input type="text" placeholder="아이디" name="userId" required 
+                        oninvalid="this.setCustomValidity('아이디 입력 필수')" oninput = "setCustomValidity('')"/><br><br>
+                    <input type="text" placeholder="비밀번호" name="userPw" required 
+                        oninvalid="this.setCustomValidity('비밀번호 입력 필수')" oninput = "setCustomValidity('')" /><br><br>
+
+                    <input type="submit" value="탈퇴" />
+                </fieldset>
+            </form>
+            <a href="/">🏠</a>
+        </center>
+    </div>
+</body>
+
+</html>

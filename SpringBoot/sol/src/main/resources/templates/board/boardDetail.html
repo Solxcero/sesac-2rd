@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   
+</head>
+
+<body> 
+    <div style="padding:5px 300px;">
+    <h1>게시글</h1>
+   
+    <p>
+    <h3>작성자 : [[${board.boardWriter}]]</h3>
+    <h3>글 제목</h3>
+    <textarea name="boardTitle" style="width:100%; resize: none" readonly>[[${board.boardTitle}]]</textarea>
+    <h3>글 내용</h3>
+    <textarea name="boardContent" style="width:100%; height:200px; resize: none" readonly>[[${board.boardContent}]]</textarea>
+    </p>
+    <th:block th:if="${user.userId} == admin">
+        <a th:href="@{/board/boardRemove(boardNo=${board.boardNo})}" style="text-decoration-line:none; color: rgb(30, 114, 30)">글 삭제</a>
+    </th:block>
+    
+    <th:block th:if="${board.boardWriter} == ${session.user.userId}">
+        <a th:href="@{/board/boardRemove(boardNo=${board.boardNo})}" style="text-decoration-line:none; color: rgb(30, 114, 30)">글 삭제</a>
+        <a th:href="@{/board/boardUpdate(boardNo=${board.boardNo})}" style="text-decoration-line:none; float: right; color: rgb(30, 114, 30)">글수정</a> 
+    </th:block><br><br>
+    <!-- <center><a href="/board/boardList" style="text-decoration-line:none">목록으로</a> </center> -->
+    <center><input type="button" value="목록으로" onclick="location.href='/board/boardList'"
+                    style="background-color:  rgb(197, 252, 115); cursor: pointer; border: 0; border-radius:0.5em; padding: 3px 8px; font-weight: bold;"></center>
+</div>
+    
+</body>
+
+</html>

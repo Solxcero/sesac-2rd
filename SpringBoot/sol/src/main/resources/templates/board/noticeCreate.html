@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   
+</head>
+
+<body> 
+    <div style="padding:5px 300px;">
+    <h1>공지작성📢</h1>
+   
+    <form action="/board/noticeCreate" method="post" autocomplete="off">
+        <p>
+        
+        <h3>제목</h3>
+        <textarea name="notTitle" style="width:100%; resize: none;" required 
+        oninvalid="this.setCustomValidity('글 제목이 없어요😲')" oninput = "setCustomValidity('')"></textarea>
+        <h3>내용</h3>
+        <textarea name="notContent" style="width:100% ; height:200px; resize: none;"required 
+        oninvalid="this.setCustomValidity('글 내용이 없어요😲')" oninput = "setCustomValidity('')">
+        </textarea>
+    </p>
+        <input type="reset" value="전체지우기" style="background-color:  rgb(248, 93, 93);cursor: pointer; border-radius:0.5em;"/>
+        <input type="submit" value="업로드" style="background-color:  rgb(248, 93, 93);cursor: pointer; float: right; border-radius:0.5em;" /><br><br>
+        <a href="/board/boardList" style="text-decoration: none;">뒤로</a>
+    
+    </form>
+    <center><a href="/">🏠</a></center>
+</div>
+</body>
+
+</html>
