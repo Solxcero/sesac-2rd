@@ -10,7 +10,4 @@
 ![29](https://user-images.githubusercontent.com/99321739/204097123-43669602-7421-4749-b1f1-f805e436ad1c.png)
 ![30](https://user-images.githubusercontent.com/99321739/204097079-a5e569d6-8e2d-47d6-80db-4d771448cb6f.png)
 ![31](https://user-images.githubusercontent.com/99321739/204097082-b82a34ce-d81c-41a1-aa44-2043bbbb4755.png)
-![33](https://user-images.githubusercontent.com/99321739/204097085-f382d9e4-5f05-431a-a815-e383ba5c98a4.png)
-![34](https://user-images.githubusercontent.com/99321739/204097093-254db113-d2cd-4ae7-b9c7-f81101a20755.png)
-![35](https://user-images.githubusercontent.com/99321739/204097099-09ec3425-8954-4a0d-8fe7-444409e4fb06.png)
 ![땡큐](https://user-images.githubusercontent.com/99321739/204097173-a01752b9-f86f-4340-920a-c3b68bdfb391.png)
