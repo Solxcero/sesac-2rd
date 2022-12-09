@@ -1,6 +1,5 @@
 ![표지](https://user-images.githubusercontent.com/99321739/204096545-19c81171-b625-48c1-8509-d63544736f5c.png)
 ![목차](https://user-images.githubusercontent.com/99321739/204096553-cf24f720-fb39-423d-a71c-4f2447d4ad46.png)
-![팀소개](https://user-images.githubusercontent.com/99321739/204096581-2e1dca11-3334-4111-af26-75194edc17d7.png)
 ![22](https://user-images.githubusercontent.com/99321739/204097105-01829907-0963-4c24-8e33-d1f93a2fde49.png)
 ![23](https://user-images.githubusercontent.com/99321739/204097108-af3e3ac8-c278-468e-a460-a5ed95d966db.png)
 ![24](https://user-images.githubusercontent.com/99321739/204097111-cdd663d2-adca-493b-ba51-5f823a34b025.png)
