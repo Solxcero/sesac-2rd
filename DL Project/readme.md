@@ -1,3 +1,5 @@
+> **단어 인식** 부분을 맡아 프로젝트 진행하여 해당 부분에 대한 발표 자료만 게시하였습니다.
+
 ![5](https://user-images.githubusercontent.com/99321739/210462185-d6a6bf06-b609-4250-9ad3-cdcfe0f16d61.png)
 ![8](https://user-images.githubusercontent.com/99321739/210462190-fb0304e4-6858-409a-9f67-dc745c2312b8.png)
 ![10](https://user-images.githubusercontent.com/99321739/210462192-27191c76-51f8-4f62-b3f6-be4b5d76bec6.png)
