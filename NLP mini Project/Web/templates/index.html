@@ -1,0 +1,67 @@
+<!-- templates/speech_bubble.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AntHouse</title>
+  <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
+  <style>
+    .speech-bubble {
+      position: relative;
+      background: #eeebeb;
+      border-radius: .4em;
+      padding: 1em;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);        
+      color: #333;
+
+    }
+    
+    .speech-bubble:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 20px solid transparent;
+      border-top-color: #eeebeb;
+      border-bottom: 0;
+      margin-left: -10px;
+      margin-bottom: -20px;
+
+    }
+
+    .image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  
+  </style>
+  
+</head>
+<body>
+    <div style="position:relative">
+        <p>ver.1.0.0</p>
+        <p >여기는 kospi200 안에 있는 회사들의 금융 정보를 알려주는 장소입니다.</p>
+      </div>
+  <div class="speech-bubble" style="position:absolute">
+    <p>{{ message }}</p>
+  </div>
+  
+  <div class="image-container"  style="position: relative">
+    <a href="/chat">
+      <img src = "../static/img/ant.png" alt="An example image" width="200" height="300"/>
+    </a>
+  </div>
+    
+    
+
+</body>
+</html>
